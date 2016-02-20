@@ -22,13 +22,13 @@ gulp.task('jsx', () => {
 });
 
 gulp.task('static', () => {
-	gulp.src(['./src/index.html', './src/main.css'])
+	gulp.src(['./src/index.html', './src/*.*'])
 		.pipe(gulp.dest('./dist'));
 });
 
 gulp.task('watch', () => {
 	watch('./src/jsx/**/*.jsx', () => { gulp.start('jsx'); });
-	watch(['./src/index.html', './src/main.css'], () => { gulp.start('static'); });
+	watch(['./src/index.html', './src/*.*'], () => { gulp.start('static'); });
 });
 
 gulp.task('default', ['watch', 'jsx', 'static']);
