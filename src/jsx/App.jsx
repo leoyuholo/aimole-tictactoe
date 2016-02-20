@@ -40,6 +40,7 @@ class App extends React.Component {
         super();
         this.state = {
             results: [[[0, 0, 0], [0, 0, 0], [0, 0, 0]]],
+            submitted: false,
             currentFrame: 0,
             totalFrame: 0,
             playing: false
@@ -52,6 +53,7 @@ class App extends React.Component {
         alert('submit button clicked.');
         this.setState({
             results: gameBoard,
+            submitted: true,
             currentFrame: 0,
             totalFrame: gameBoard.length,
             playing: true
@@ -80,7 +82,7 @@ class App extends React.Component {
                     setCurrentFrame={this.setCurrentFrame}
                     currentFrame={this.state.currentFrame}
                     totalFrame={this.state.totalFrame}
-                    submitted={this.state.results !== undefined}
+                    submitted={this.state.submitted}
                     style={styles.player} />
             </div>
         );
