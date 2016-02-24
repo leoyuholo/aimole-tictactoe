@@ -50,7 +50,6 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        alert('submit button clicked.');
         this.setState({
             results: gameBoard,
             submitted: true,
