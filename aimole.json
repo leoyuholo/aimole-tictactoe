@@ -22,7 +22,7 @@
     {
       "name": "randomplayer",
       "file": "ai/randomplayer.c",
-      "language" "c"
+      "language": "c"
     }
   ]
 }
