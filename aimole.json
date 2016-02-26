@@ -4,6 +4,7 @@
   "author": "",
   "version": "1.0.0",
   "viewUrl": "http://leoyuholo.github.io/aimole-tictactoe/",
+  "players": 2,
   "verdict": {
     "file": "verdict/verdict.py",
     "language": "python"
