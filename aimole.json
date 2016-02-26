@@ -3,5 +3,26 @@
   "description": "Fun game.",
   "author": "",
   "version": "1.0.0",
-  "viewUrl": "http://leoyuholo.github.io/aimole-tictactoe/"
+  "viewUrl": "http://leoyuholo.github.io/aimole-tictactoe/",
+  "verdict": {
+    "file": "verdict/verdict.py",
+    "language": "python"
+  },
+  "ai": [
+    {
+      "name": "easyplayer",
+      "file": "ai/easyplayer.c",
+      "language": "c"
+    },
+    {
+      "name": "normalplayer",
+      "file": "ai/normalplayer.c",
+      "language": "c"
+    },
+    {
+      "name": "randomplayer",
+      "file": "ai/randomplayer.c",
+      "language" "c"
+    }
+  ]
 }
