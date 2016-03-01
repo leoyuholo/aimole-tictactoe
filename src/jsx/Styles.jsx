@@ -7,7 +7,7 @@ export default {
         textColor: Colors.white
     },
     main: {
-        background: 'url(http://www.freebiesgallery.com/wp-content/uploads/2014/02/blurred-background-2.jpg)'
+        background: 'url(./bg.jpg)'
     },
     zDepth: {
         _1: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',

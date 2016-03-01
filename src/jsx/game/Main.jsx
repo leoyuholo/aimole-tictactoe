@@ -6,8 +6,8 @@ import Board from 'game/Board.jsx';
 
 const styles = {
     main: {
-        height: '360px',
-        width: '640px',
+        height: 'calc(100vh - 60px)',
+        width: '100vw',
         background: Styles.main.background,
         display: 'flex',
         alignItems: 'center',
