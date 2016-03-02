@@ -129,7 +129,7 @@ int main() {
                                 }
                         }
 			//Choose the tile with most credits
-			int max = 0, ansx, ansy;
+			int max = 0, ansx = 0, ansy = 0;
 			for (x = 0; x < 3; x++) {
 				for (y = 0; y < 3; y++) {
 					if (weight[x][y] > max)	{
@@ -139,7 +139,7 @@ int main() {
 					}
 				}
 			}
-			printf("%d %d\n", ansx, ansy);
+			if (board[ansx][ansy] == 0) printf("%d %d\n", ansx, ansy);
 		}
 		round1 = 0;	
 	}
