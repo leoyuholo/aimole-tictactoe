@@ -48,7 +48,7 @@ int main() {
 					else if (board[x][y] == 0
 							&& y + 1 < 2
 							&& board[x][y + 1] == 1) {
-						weight[x][y + 1]++;
+						weight[x][y]++;
 					}
 				}
 			}
@@ -58,7 +58,9 @@ int main() {
 				int row = 0, col = 0;
 				for (j = 0; j < 3; j++) {
 					if (board[i][j] == 2) row++;
+					else if (board[i][j] == 1) row--;
 					if (board[j][i] == 2) col++;
+					else if (board[j][i] == 1) col--;
 				}
 				if (row == 2) {
 					for (j = 0; j < 3; j++) {
@@ -74,7 +76,9 @@ int main() {
 			int diagonal1 = 0, diagonal2 = 0;
 			for (i = 0; i < 3; i++) {
 				if (board[i][i] == 2) diagonal1++;
+				else if (board[i][i] == 1) diagonal1--;
 				if (board[i][2 - i] == 2) diagonal2++;
+				else if (board[i][2 - i] == 1) diagonal2--;
 			}
 			if (diagonal1 == 2) {
 				for (i = 0; i < 3; i++) {
@@ -86,12 +90,14 @@ int main() {
 					if (board[i][2 - i] == 0) weight[i][2 - i] += 5;
 				}
 			}
-			//(3) If we will win by getting the blank tile, add 10 credits.
+			//(3) If we will win by getting the blank tile, add 20 credits.
                         for (i = 0; i < 3; i++) {
                                 int row = 0, col = 0;
                                 for (j = 0; j < 3; j++) {
                                         if (board[i][j] == 1) row++;
+					else if (board[i][j] == 2) row--;
                                         if (board[j][i] == 1) col++;
+					else if (board[j][i] == 2) col--;
                                 }
                                 if (row == 2) {
                                         for (j = 0; j < 3; j++) {
@@ -104,9 +110,13 @@ int main() {
                                         }
                                 }
                         }
+			diagonal1 = 0;
+			diagonal2 = 0;
                         for (i = 0; i < 3; i++) {
                                 if (board[i][i] == 1) diagonal1++;
+				else if (board[i][i] == 2) diagonal1--;
                                 if (board[i][2 - i] == 1) diagonal2++;
+				else if (board[i][2 - 1] == 2) diagonal2--;
                         }
                         if (diagonal1 == 2) {
                                 for (i = 0; i < 3; i++) {
@@ -119,7 +129,7 @@ int main() {
                                 }
                         }
 			//Choose the tile with most credits
-			int max = 0, ansx, ansy;
+			int max = 0, ansx = 0, ansy = 0;
 			for (x = 0; x < 3; x++) {
 				for (y = 0; y < 3; y++) {
 					if (weight[x][y] > max)	{
@@ -129,7 +139,7 @@ int main() {
 					}
 				}
 			}
-			printf("%d %d\n", ansx, ansy);
+			if (board[ansx][ansy] == 0) printf("%d %d\n", ansx, ansy);
 		}
 		round1 = 0;	
 	}
