@@ -8,6 +8,8 @@ var source = require('vinyl-source-stream');
 var gutil = require('gulp-util');
 var watch = require('gulp-watch');
 
+var server = require('gulp-server-livereload');
+
 gulp.task('jsx', () => {
 	browserify('./src/jsx/App.jsx', { debug: true, paths: ['./src/jsx'] })
 		.transform(babelify, {
@@ -31,4 +33,15 @@ gulp.task('watch', () => {
 	watch(['./src/index.html', './src/*.*'], () => { gulp.start('static'); });
 });
 
+gulp.task('webserver', function() {
+	gulp.src('dist')
+		.pipe(server({
+			host: '0.0.0.0',
+			livereload: true,
+			directoryListing: true
+		}));
+});
+
 gulp.task('default', ['watch', 'jsx', 'static']);
+
+gulp.task('dev', ['default', 'webserver']);
