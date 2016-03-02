@@ -48,7 +48,7 @@ int main() {
 					else if (board[x][y] == 0
 							&& y + 1 < 2
 							&& board[x][y + 1] == 1) {
-						weight[x][y + 1]++;
+						weight[x][y]++;
 					}
 				}
 			}
