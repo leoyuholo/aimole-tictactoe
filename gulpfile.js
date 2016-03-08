@@ -10,6 +10,7 @@ var gutil = require('gulp-util');
 var watch = require('gulp-watch');
 
 var livereload = require('gulp-livereload');
+var server = require('gulp-server-livereload');
 
 gulp.task('jsx', () => {
 	var bundler = browserify('./src/jsx/App.jsx', {
@@ -48,4 +49,14 @@ gulp.task('watch', () => {
 	watch(['./src/index.html', './src/*.*'], () => { gulp.start('static'); });
 });
 
+gulp.task('webserver', function() {
+	gulp.src('dist')
+		.pipe(server({
+			host: '0.0.0.0',
+			livereload: true
+		}));
+});
+
 gulp.task('default', ['watch', 'jsx', 'static']);
+
+gulp.task('dev', ['default', 'webserver']);

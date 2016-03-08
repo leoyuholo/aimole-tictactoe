@@ -16,6 +16,7 @@
     "browserify": "^11.2.0",
     "gulp": "^3.9.0",
     "gulp-livereload": "^3.8.1",
+    "gulp-server-livereload": "^1.7.1",
     "gulp-util": "^3.0.7",
     "gulp-watch": "^4.3.5",
     "material-ui": "^0.14.4",
