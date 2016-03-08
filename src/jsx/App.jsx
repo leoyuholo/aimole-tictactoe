@@ -9,17 +9,18 @@ injectTapEventPlugin();
 
 const styles = {
     main: {
-        width: '640px'
+        width: '100vw'
     },
     game: {
-        width: '640px',
-        height: '360px',
+        width: '100vw',
+        height: '10vh',
         background: 'url(http://www.freebiesgallery.com/wp-content/uploads/2014/02/blurred-background-2.jpg)'
     },
     player: {
-        width: '640px'
+        width: '100vw'
     }
 };
+
 let gameBoard = window.aimole.display;
 // let gameBoard = [
 //     [[0, 0, 0], [0, 0, 0], [0, 0, 0]],
@@ -50,6 +51,7 @@ class App extends React.Component {
     }
 
     componentDidMount() {
+        //alert('submit button clicked.');
         this.setState({
             results: gameBoard,
             submitted: true,

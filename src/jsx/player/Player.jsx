@@ -1,8 +1,10 @@
 import React from 'react';
 import {Paper, FloatingActionButton, FontIcon, IconButton, Slider} from 'material-ui';
+import _ from 'lodash';
 
 const styles = {
     player: {
+        height: '60px',
         padding: '10px',
         display: 'flex',
         alignItems: 'center',
@@ -26,12 +28,14 @@ const styles = {
 
 export default class Player extends React.Component {
 
-    constructor() {
-        super();
-        this.handlePrev = this.handlePrev.bind(this);
-        this.handleNext = this.handleNext.bind(this);
-        this.handlePlay = this.handlePlay.bind(this);
-        this.handleSliderChange = this.handleSliderChange.bind(this);
+    constructor(props) {
+        super(props);
+        _.bindAll(this, [
+            'handlePrev',
+            'handleNext',
+            'handlePlay',
+            'handleSliderChange'
+        ]);
     }
 
     handlePrev() {

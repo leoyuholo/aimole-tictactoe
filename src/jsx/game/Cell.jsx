@@ -7,10 +7,10 @@ import Styles from 'Styles.jsx';
 export default class Cell extends React.Component {
     getCellStyle(x) {
         return {
-            fontSize: '50px',
+            fontSize: '10vh',
             fontWeight: 'bold',
-            height: '70px',
-            width: '70px',
+            width: '20vh',
+            height: '20vh',
             border: '5px solid ' + Styles.cell.borderColor,
             color: Styles.cell.textColor,
             backgroundColor: Styles.cell.bgColor,
